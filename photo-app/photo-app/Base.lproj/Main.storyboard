@@ -108,7 +108,7 @@
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="collectionView" destination="TIL-59-1vL" id="UgE-RS-KuD"/>
+                        <outlet property="collectionView" destination="TIL-59-1vL" id="PDS-3d-7FC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9d-Gw-1x5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
