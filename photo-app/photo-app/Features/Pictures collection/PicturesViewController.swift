@@ -7,18 +7,21 @@
 
 import Foundation
 import UIKit
-class PicturesViewController:UIViewController{
+class PicturesViewController:UIViewController{ // es un uiviewcontroller creado por nosotros.
   
   @IBOutlet weak var collectionView: UICollectionView!
   private let reuseIdentifier = String(describing: PictureCell.self)
+  private let marginBetweenCells: CGFloat = 4.0
   
 // reuseIdentifier devuelve el nombre de mi clse y crea PictureCell => es ifual a poner reuseIdentificer = PictureCell
   
-  override func viewDidLoad() {
+  override func viewDidLoad() { // viewdidload se llama siempre al cargar la pantalla. en nib guarda la vista del xib.
     // le dices que carge el xib en NIB (forma antigua) y le digo que use mis picturesCells como propias
     let nib = UINib(nibName: reuseIdentifier, bundle: nil)
     collectionView.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
+    // aqui estoy registrando mi nib y por eso uso la cel q quiero. registro el  picturecel que esta contenida en reuseIdentidier.
     
+    // con el registro le dices que tendran ese nib los que tengan el identificador reuseIdentifier
   }
   
   
@@ -26,8 +29,12 @@ class PicturesViewController:UIViewController{
 
 extension PicturesViewController: UICollectionViewDataSource {
   // delegado sobre el dataSource para que se entere de lo q pasa
+  // extiendo mi clase añadiendole comportamientos. extension q implementan protocolos. y se que aqui solo van las cosas del DataSource.
+  
+  
+  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-   
+ 
     return 100
     
   }
@@ -37,7 +44,7 @@ extension PicturesViewController: UICollectionViewDataSource {
      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) // crea celdas reutilizadas
      cell.backgroundColor = .black
 
-      
+    // representacion visual celda super importnt
     // id que usa collectionview para saber que celdas se tiene q traer.
     
      return cell
@@ -50,11 +57,44 @@ extension PicturesViewController: UICollectionViewDataSource {
       print (indexPath)
       print(indexPath.item)
       print(indexPath.row)
-      
+        //extension de la clase Pictureview que usa protocolo q implementa esta funcionalidad.
        // escribir directamente didSelect
+      // super importante porq cuando pinchas tenemos q saber esa info.
     }
        
-    }
- 
-  
+  }
+    extension PicturesViewController:UICollectionViewDelegateFlowLayout {
+   // adapta visualmente la collectionView y hay que implementar metodos, que solo hay que bsuscarlo.
+      
+      func collectionView(_: UICollectionView, layout: UICollectionViewLayout, sizeForItemAt: IndexPath) -> CGSize {
+    
+         return CGSize.init(width:300, height:300)
+        
+      }
 
+      func collectionView(_: UICollectionView, layout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt: Int) -> CGFloat {
+        
+        return marginBetweenCells
+              
+    }
+      
+      func collectionView(_: UICollectionView, layout: UICollectionViewLayout, minimumLineSpacingForSectionAt: Int) -> CGFloat {
+      
+        return marginBetweenCells
+    
+        
+      }
+      
+      
+      func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+        
+        
+      }
+      
+    
+  
+      
+      
+      
+        }
