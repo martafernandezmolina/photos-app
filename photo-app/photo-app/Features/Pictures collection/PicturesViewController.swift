@@ -16,13 +16,18 @@ class PicturesViewController:UIViewController{
 
 extension PicturesViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+   
     return 100
+    
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellIdentifier", for: indexPath) // crea celdas reutilizadas
+     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellIdentifier", for: indexPath) // crea celdas reutilizadas
      cell.backgroundColor = .black
+      
+    // id que usa collectionview para saber que celdas se tiene q traer.
+    
      return cell
     
   }

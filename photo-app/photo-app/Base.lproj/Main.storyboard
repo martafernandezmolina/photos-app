@@ -28,7 +28,6 @@
         <!--View Controller-->
         <scene sceneID="2Yj-7P-ZXr">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gd9-Sa-IOp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="aQP-RK-JtV" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vDg-xy-u0E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -39,6 +38,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" image="magnifyingglass" catalog="system" id="waH-s5-mXE"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gd9-Sa-IOp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="304" y="-611"/>
         </scene>
@@ -79,7 +79,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellIdentifier" id="itW-4X-V8M">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="itW-4X-V8M">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dbs-We-8Hb">
@@ -118,7 +118,6 @@
         <!--View Controller-->
         <scene sceneID="X5U-O5-Vpi">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ss0-90-IrV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="2PH-rF-Orl" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j2H-3i-RQ7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -129,6 +128,7 @@
                     <tabBarItem key="tabBarItem" image="folder.fill" catalog="system" id="T2i-gU-kjd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ss0-90-IrV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1164" y="-611"/>
         </scene>
