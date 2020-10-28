@@ -88,21 +88,40 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSt-Pe-pee">
                                         <rect key="frame" x="0.0" y="0.0" width="103.5" height="60"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" button="YES" selected="YES"/>
+                                        </accessibility>
                                         <state key="normal" title="Year"/>
+                                        <state key="selected">
+                                            <color key="titleColor" red="0.74900825780000002" green="0.47136383630000001" blue="0.007691502052" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="button1:" destination="xiz-An-KEX" eventType="touchUpInside" id="RPl-FW-8sz"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGb-1D-Uga">
                                         <rect key="frame" x="103.5" y="0.0" width="103.5" height="60"/>
                                         <state key="normal" title="Month"/>
+                                        <connections>
+                                            <action selector="button2:" destination="xiz-An-KEX" eventType="touchUpInside" id="kPL-Ez-nI7"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5p8-nB-Exk">
                                         <rect key="frame" x="207" y="0.0" width="103.5" height="60"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Day"/>
+                                        <connections>
+                                            <action selector="button3:" destination="xiz-An-KEX" eventType="touchUpInside" id="xgO-BR-TS5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DN8-hu-oXM">
                                         <rect key="frame" x="310.5" y="0.0" width="103.5" height="60"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="All photos"/>
+                                        <connections>
+                                            <action selector="button4:" destination="xiz-An-KEX" eventType="touchUpInside" id="fGs-Q7-wm6"/>
+                                        </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" red="0.4859276414" green="1" blue="0.41886967419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="eBQ-Cx-ag5"/>
                                 </constraints>
@@ -126,6 +145,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="TIL-59-1vL" id="PDS-3d-7FC"/>
+                        <outlet property="stackHorizontal" destination="QQc-MC-tJ0" id="4ZK-cM-ipz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9d-Gw-1x5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

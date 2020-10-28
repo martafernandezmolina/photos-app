@@ -10,12 +10,47 @@ import UIKit
 class PicturesViewController:UIViewController{ // es un uiviewcontroller creado por nosotros.
   
   @IBOutlet weak var collectionView: UICollectionView!
+  @IBOutlet weak var stackHorizontal: UIStackView!
+  
   private let reuseIdentifier = String(describing: PictureCell.self)
   private let marginBetweenCells: CGFloat = 4.0
   
-// reuseIdentifier devuelve el nombre de mi clse y crea PictureCell => es ifual a poner reuseIdentificer = PictureCell
+  @IBAction func button1(_ sender: Any) {
+    print("boton1")
+ 
+  }
+
   
-  override func viewDidLoad() { // viewdidload se llama siempre al cargar la pantalla. en nib guarda la vista del xib.
+  @IBAction func button2(_ sender: Any) {
+    print("boton2")
+  }
+  
+  @IBAction func button3(_ sender: Any) {
+    print("boton3")
+  }
+  
+  @IBAction func button4(_ sender: Any) {
+    print("boton4")
+  }
+  // reuseIdentifier devuelve el nombre de mi clse y crea PictureCell => es ifual a poner reuseIdentificer = PictureCell
+  
+  override func viewDidLoad() {
+    
+    stackHorizontal.layer.cornerRadius = 10
+     
+//
+//    func favorited(button: UIButton) {
+//
+//      button.isSelected = true
+//      button.backgroundColor = UIColor.redColor
+//      forState: .Selected)
+//
+//    }
+//
+//
+   
+   
+    // viewdidload se llama siempre al cargar la pantalla. en nib guarda la vista del xib.
     // le dices que carge el xib en NIB (forma antigua) y le digo que use mis picturesCells como propias
     let nib = UINib(nibName: reuseIdentifier, bundle: nil)
     collectionView.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
@@ -120,10 +155,6 @@ extension PicturesViewController: UICollectionViewDataSource {
         
         
       }
-      
-    
-  
-      
-      
+        
       
         }
