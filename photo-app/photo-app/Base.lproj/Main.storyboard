@@ -58,7 +58,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NS0-ci-8Go" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-414" y="-1301"/>
+            <point key="canvasLocation" x="-562" y="-1679"/>
         </scene>
         <!--Item-->
         <scene sceneID="uiz-I7-WDD">
@@ -96,28 +96,28 @@
                                             <color key="titleColor" red="0.74900825780000002" green="0.47136383630000001" blue="0.007691502052" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="button1:" destination="xiz-An-KEX" eventType="touchUpInside" id="RPl-FW-8sz"/>
+                                            <action selector="button1Touched:" destination="xiz-An-KEX" eventType="touchUpInside" id="a40-PP-u3v"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGb-1D-Uga">
                                         <rect key="frame" x="103.5" y="0.0" width="103.5" height="60"/>
                                         <state key="normal" title="Month"/>
                                         <connections>
-                                            <action selector="button2:" destination="xiz-An-KEX" eventType="touchUpInside" id="kPL-Ez-nI7"/>
+                                            <action selector="button2Touched:" destination="xiz-An-KEX" eventType="touchUpInside" id="EBN-iD-N65"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5p8-nB-Exk">
                                         <rect key="frame" x="207" y="0.0" width="103.5" height="60"/>
                                         <state key="normal" title="Day"/>
                                         <connections>
-                                            <action selector="button3:" destination="xiz-An-KEX" eventType="touchUpInside" id="xgO-BR-TS5"/>
+                                            <action selector="button3Touched:" destination="xiz-An-KEX" eventType="touchUpInside" id="Ulv-nu-Pz9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DN8-hu-oXM">
                                         <rect key="frame" x="310.5" y="0.0" width="103.5" height="60"/>
                                         <state key="normal" title="All photos"/>
                                         <connections>
-                                            <action selector="button4:" destination="xiz-An-KEX" eventType="touchUpInside" id="fGs-Q7-wm6"/>
+                                            <action selector="button4Touched:" destination="xiz-An-KEX" eventType="touchUpInside" id="u5H-UQ-y6c"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -144,8 +144,12 @@
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="allPhotos" destination="DN8-hu-oXM" id="KMq-dW-MwS"/>
                         <outlet property="collectionView" destination="TIL-59-1vL" id="PDS-3d-7FC"/>
+                        <outlet property="day" destination="GGb-1D-Uga" id="mbD-co-Axv"/>
+                        <outlet property="month" destination="5p8-nB-Exk" id="QdF-xf-tT1"/>
                         <outlet property="stackHorizontal" destination="QQc-MC-tJ0" id="4ZK-cM-ipz"/>
+                        <outlet property="year" destination="PSt-Pe-pee" id="Thf-Fa-Lnn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9d-Gw-1x5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
