@@ -27,7 +27,7 @@ class PicturesViewController: UIViewController { // es un uiviewcontroller cread
     cellWidth = 75
     cellHeight = 75
     collectionView.reloadData()
-    print("boton1")
+    print("botoon1")
   }
   
   
@@ -36,7 +36,8 @@ class PicturesViewController: UIViewController { // es un uiviewcontroller cread
     cellWidth = 100
     cellHeight = 100
     collectionView.reloadData()
-    print("boton2")
+    print("botoon2")
+    
   }
   
   
