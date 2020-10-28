@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -78,26 +77,44 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="itW-4X-V8M">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dbs-We-8Hb">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="xiz-An-KEX" id="5ck-HH-BLx"/>
                                     <outlet property="delegate" destination="xiz-An-KEX" id="ePZ-a2-7VG"/>
                                 </connections>
                             </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QQc-MC-tJ0">
+                                <rect key="frame" x="0.0" y="753" width="414" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSt-Pe-pee">
+                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="60"/>
+                                        <state key="normal" title="Year"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGb-1D-Uga">
+                                        <rect key="frame" x="103.5" y="0.0" width="103.5" height="60"/>
+                                        <state key="normal" title="Month"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5p8-nB-Exk">
+                                        <rect key="frame" x="207" y="0.0" width="103.5" height="60"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DN8-hu-oXM">
+                                        <rect key="frame" x="310.5" y="0.0" width="103.5" height="60"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="eBQ-Cx-ag5"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ic1-Oe-M2j"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
+                            <constraint firstItem="Ic1-Oe-M2j" firstAttribute="trailing" secondItem="QQc-MC-tJ0" secondAttribute="trailing" id="OaX-dQ-1Iw"/>
+                            <constraint firstItem="QQc-MC-tJ0" firstAttribute="leading" secondItem="Ic1-Oe-M2j" secondAttribute="leading" id="cW1-dj-0kr"/>
                             <constraint firstItem="Ic1-Oe-M2j" firstAttribute="bottom" secondItem="TIL-59-1vL" secondAttribute="bottom" id="fTE-09-ftd"/>
+                            <constraint firstItem="Ic1-Oe-M2j" firstAttribute="bottom" secondItem="QQc-MC-tJ0" secondAttribute="bottom" id="gh3-Ky-UuP"/>
                             <constraint firstItem="Ic1-Oe-M2j" firstAttribute="trailing" secondItem="TIL-59-1vL" secondAttribute="trailing" id="jo3-Qd-6Cs"/>
                             <constraint firstItem="TIL-59-1vL" firstAttribute="top" secondItem="Ic1-Oe-M2j" secondAttribute="top" id="x3C-Xc-iPw"/>
                             <constraint firstItem="TIL-59-1vL" firstAttribute="leading" secondItem="Ic1-Oe-M2j" secondAttribute="leading" id="zhz-7z-r7S"/>
