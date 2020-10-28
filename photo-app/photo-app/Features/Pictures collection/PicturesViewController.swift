@@ -43,7 +43,36 @@ extension PicturesViewController: UICollectionViewDataSource {
     
      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) // crea celdas reutilizadas
      cell.backgroundColor = .black
-
+                            // confirmame que eres de tipo cell i guardate ahí
+    if let pictureCell = (cell as? PictureCell){
+//      print(pictureCell.label.text)
+   //  pictureCell.label.text = String(indexPath.item)
+      //let image1 = UIImage(named:"pic2.jpg")
+     // pictureCell.imageView.image = UIImage(named: "pic2")
+     // if.row pom imagen pero si 
+    
+      // pictureCell.label.text = indexPath.item
+       // pictureCell.label.text = indexPath.row
+     // print(indexPath.section)
+      
+      if indexPath.row % 2  == 0 {
+        
+        pictureCell.imageView.image = UIImage(named: "pic2")
+        
+      } else{
+        
+        pictureCell.imageView.image = UIImage(named: "pic1")
+        
+      }
+    
+      
+    //  pictureCell.imageView.image = indexPath.row % 2 == 0 ?  UIImage(named: "pic2"): UIImage(named: "pic1")
+      //  pictureCell.imageView.image = indexPath.row % 2 == 0 ? imagen1 : imagen2
+      
+      // se puede hacer tmb con la funcion que devuelva  un bool true o false.
+          }
+    
+     // crea/ devuelve Cells
     // representacion visual celda super importnt
     // id que usa collectionview para saber que celdas se tiene q traer.
     
