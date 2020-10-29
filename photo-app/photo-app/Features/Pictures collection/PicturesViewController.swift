@@ -17,6 +17,7 @@ class PicturesViewController: UIViewController { // es un uiviewcontroller cread
   @IBOutlet weak var month: UIButton!
   @IBOutlet weak var allPhotos: UIButton!
   
+ 
   private let reuseIdentifier = String(describing: PictureCell.self)
   private let marginBetweenCells: CGFloat = 4.0
   
@@ -27,7 +28,7 @@ class PicturesViewController: UIViewController { // es un uiviewcontroller cread
     cellWidth = 75
     cellHeight = 75
     collectionView.reloadData()
-    print("botooon1")
+    print("boton1")
   }
   
   
@@ -36,7 +37,7 @@ class PicturesViewController: UIViewController { // es un uiviewcontroller cread
     cellWidth = 100
     cellHeight = 100
     collectionView.reloadData()
-    print("botoon2")
+    print("boton2")
     
   }
   
@@ -59,7 +60,7 @@ class PicturesViewController: UIViewController { // es un uiviewcontroller cread
   }
   // reuseIdentifier devuelve el nombre de mi clse y crea PictureCell => es ifual a poner reuseIdentificer = PictureCell
   
-  
+  // MARK -
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -115,6 +116,15 @@ extension PicturesViewController: UICollectionViewDataSource {
     return 100
     
   }
+  
+//  func rotated() {
+//      if UIDevice.current.orientation.isLandscape {
+//          print("Landscape")
+//      } else {
+//          print("Portrait")
+//      }
+ 
+   
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
@@ -204,4 +214,42 @@ extension PicturesViewController:UICollectionViewDelegateFlowLayout {
     
   }
   
+  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator)  {
+    super.viewWillTransition(to: size, with: coordinator)  // le pasamos los mismos parametros del super.
+    // no esta directamente en la uicollectionview
+   
+         if UIDevice.current.orientation.isLandscape {
+             print("Landscape")
+          if let scrollLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
+            
+            scrollLayout.scrollDirection = .horizontal
+            
+          }
+          
+        
+         } else if UIDevice.current.orientation.isPortrait {
+             print("Portrait")
+          
+          if let  scrollLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
+            
+            scrollLayout.scrollDirection = .vertical
+            
+            
+          }
+        
+         } else if UIDevice.current.orientation.isFlat {
+          if let  scrollLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
+            
+            scrollLayout.scrollDirection = .vertical
+            
+            
+          }
+         
+          
+         }
+     }
+
+  
+  
 }
+

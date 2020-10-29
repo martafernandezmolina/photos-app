@@ -144,6 +144,7 @@
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="CollectionView" destination="TIL-59-1vL" id="J1J-IY-vKJ"/>
                         <outlet property="allPhotos" destination="DN8-hu-oXM" id="KMq-dW-MwS"/>
                         <outlet property="collectionView" destination="TIL-59-1vL" id="PDS-3d-7FC"/>
                         <outlet property="day" destination="GGb-1D-Uga" id="mbD-co-Axv"/>
