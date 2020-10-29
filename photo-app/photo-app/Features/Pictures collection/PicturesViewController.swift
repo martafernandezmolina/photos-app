@@ -214,42 +214,129 @@ extension PicturesViewController:UICollectionViewDelegateFlowLayout {
     
   }
   
-  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator)  {
+  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
     super.viewWillTransition(to: size, with: coordinator)  // le pasamos los mismos parametros del super.
     // no esta directamente en la uicollectionview
-   
+
          if UIDevice.current.orientation.isLandscape {
              print("Landscape")
           if let scrollLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
-            
+
             scrollLayout.scrollDirection = .horizontal
-            
+
+
           }
-          
-        
+
+
          } else if UIDevice.current.orientation.isPortrait {
              print("Portrait")
-          
+
           if let  scrollLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
-            
+            // esto es conversion de tipos
+
             scrollLayout.scrollDirection = .vertical
-            
-            
+
+
           }
-        
+
          } else if UIDevice.current.orientation.isFlat {
           if let  scrollLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
-            
+
             scrollLayout.scrollDirection = .vertical
-            
-            
+
+
           }
-         
-          
+
+
          }
      }
+  
+  
+//  [12:07] Cesc
+//
+//
+//  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+//
+//          super.viewWillTransition(to: size, with: coordinator)
+//
+//
+//
+//  // Solucion guard
+//
+//          guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {​​​​​​​​ return }
+//
+//
+//
+//  if UIDevice.current.orientation.isLandscape {
+//
+//              layout.scrollDirection = .horizontal
+//
+//          }​​​​​​​​ else if UIDevice.current.orientation.isPortrait {
+//
+//              layout.scrollDirection = .vertical
+//
+//          }
+//
+//
+//
+//  // Solucion 1
+//
+//  if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//
+//  if UIDevice.current.orientation.isLandscape {
+//
+//                  layout.scrollDirection = .horizontal
+//
+//              }​​​​​​​​ else if UIDevice.current.orientation.isPortrait {
+//
+//                  layout.scrollDirection = .vertical
+//
+//              }
+//
+//          }
+//
+//
+//
+//  // Solucion 2
+//
+//  if UIDevice.current.orientation.isLandscape {
+//
+//  print("Orientation => Landscape")
+//
+//              if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//
+//                  layout.scrollDirection = .horizontal
+//
+//              }
+//
+//          }​​​​​​​​ else if UIDevice.current.orientation.isPortrait {
+//
+//  print("Orientation => Portrait")
+//
+//              if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//
+//                  layout.scrollDirection = .vertical
+//
+//              }
+
+ 
+
+}
+
+    
 
   
   
-}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
 
