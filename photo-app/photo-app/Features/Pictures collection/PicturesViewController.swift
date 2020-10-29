@@ -113,7 +113,7 @@ extension PicturesViewController: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     
-    return 100
+    return ImagesData.numOfImages()
     
   }
   
@@ -137,20 +137,25 @@ extension PicturesViewController: UICollectionViewDataSource {
       //let image1 = UIImage(named:"pic2.jpg")
       // pictureCell.imageView.image = UIImage(named: "pic2")
       // if.row pom imagen pero si
-      
+      pictureCell.imageView.image = ImagesData.imageForPosition(indexPath.row)
       // pictureCell.label.text = indexPath.item
       // pictureCell.label.text = indexPath.row
       // print(indexPath.section)
       
-      if indexPath.row % 2  == 0 {
-        
-        pictureCell.imageView.image = UIImage(named: "pic2")
-        
-      } else{
-        
-        pictureCell.imageView.image = UIImage(named: "pic1")
-        
-      }
+//      if indexPath.row % 2  == 0 {
+//
+//        pictureCell.imageView.image = UIImage(named: "pic2")
+//
+//      } else{
+//
+//        pictureCell.imageView.image = UIImage(named: "pic1")
+//
+//      }
+//
+//
+      
+      
+      
       
       
       //  pictureCell.imageView.image = indexPath.row % 2 == 0 ?  UIImage(named: "pic2"): UIImage(named: "pic1")

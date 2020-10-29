@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import UIKit
+import UIKit   // static porq puedes acceder como propiedad sin instancia.
 
 class ImagesData {
     static func numOfImages() -> Int {
@@ -30,17 +30,17 @@ class ImagesData {
       
     }
   
-  }
   
   
-     func imageForUrl(_ url: URL) -> UIImage? {    // aqui pasariamos un for in para pasar urls por un for in y luego me las da por parametro y lo convierto en uimage
+  
+      static func imageForUrl(_ url: URL) -> UIImage? {    // aqui pasariamos un for in para pasar urls por un for in y luego me las da por parametro y lo convierto en uimage
      
         let imageName:String = url.lastPathComponent // te da el nombre del archivo
        
            return  UIImage(named: imageName)
       }
 
-    }
+
     
     static func imageForPosition(_ position: Int) -> UIImage? {
         let arrayIndex: Int = position % numOfImages()
@@ -52,16 +52,10 @@ class ImagesData {
         return nil
     }
   
-  let filePath = Bundle.main.path(forResource: "imageName", ofType: "jpg"), let image = UIImage(contentsOfFile: filePath) {
-      imageView.contentMode = .scaleAspectFit
-      imageView.image = image
+
   }
 
+
+
   
-  
-  
-  
-  
-  
-  
-}
+
