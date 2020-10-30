@@ -8,8 +8,10 @@
 import Foundation
 import UIKit
 class PicturesViewController: UIViewController { // es un uiviewcontroller creado por nosotros.
-  var cellWidth:CGFloat = 75   // valores por defecto al iniciar la aplicación.
-  var cellHeight:CGFloat = 75   // valores por defecto al iniciar la aplicación.
+//  var cellWidth:CGFloat = 75   // valores por defecto al iniciar la aplicación.
+//  var cellHeight:CGFloat = 75   // valores por defecto al iniciar la aplicación.
+  var numOfHorizontalCells: CGFloat = 5.0
+  var marginBetweenCells: CGFloat = 4.0
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var stackHorizontal: UIStackView!
   @IBOutlet weak var year: UIButton!
@@ -17,16 +19,17 @@ class PicturesViewController: UIViewController { // es un uiviewcontroller cread
   @IBOutlet weak var month: UIButton!
   @IBOutlet weak var allPhotos: UIButton!
   
- 
+
   private let reuseIdentifier = String(describing: PictureCell.self)
-  private let marginBetweenCells: CGFloat = 4.0
+
   
   
   @IBAction func button1Touched(_ sender: UIButton) {
     
     selectionateActiveButton(sender)
-    cellWidth = 75
-    cellHeight = 75
+    numOfHorizontalCells = 1
+//    cellWidth = 75
+//    cellHeight = 75
     collectionView.reloadData()
     print("boton1")
   }
@@ -34,8 +37,9 @@ class PicturesViewController: UIViewController { // es un uiviewcontroller cread
   
   @IBAction func button2Touched(_ sender: UIButton) {
     selectionateActiveButton(sender)
-    cellWidth = 100
-    cellHeight = 100
+    numOfHorizontalCells = 3.0
+//    cellWidth = 100
+//    cellHeight = 100
     collectionView.reloadData()
     print("boton2")
     
@@ -44,8 +48,9 @@ class PicturesViewController: UIViewController { // es un uiviewcontroller cread
   
   @IBAction func button3Touched(_ sender: UIButton) {
     selectionateActiveButton(sender)
-    cellWidth = 250
-    cellHeight = 250
+    numOfHorizontalCells = 5.0
+//    cellWidth = 250
+//    cellHeight = 250
     collectionView.reloadData()
     print("boton3")
   }
@@ -53,8 +58,9 @@ class PicturesViewController: UIViewController { // es un uiviewcontroller cread
   
   @IBAction func button4Touched(_ sender: UIButton) {
     selectionateActiveButton(sender)
-    cellWidth = 400
-    cellHeight = 400
+    numOfHorizontalCells = 7
+//    cellWidth = 400
+//    cellHeight = 400
     collectionView.reloadData()
     print("boton4")
   }
@@ -100,6 +106,43 @@ class PicturesViewController: UIViewController { // es un uiviewcontroller cread
     sender.isSelected = true
   }
   
+  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    super.viewWillTransition(to: size, with: coordinator)  // le pasamos los mismos parametros del super.
+    // no esta directamente en la uicollectionview
+
+         if UIDevice.current.orientation.isLandscape {
+             print("Landscape")
+          if let scrollLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
+
+            scrollLayout.scrollDirection = .horizontal
+
+
+          }
+
+
+         } else if UIDevice.current.orientation.isPortrait {
+             print("Portrait")
+
+          if let  scrollLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
+            // esto es conversion de tipos
+
+            scrollLayout.scrollDirection = .vertical
+
+
+          }
+
+         } else if UIDevice.current.orientation.isFlat {
+          if let  scrollLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
+
+            scrollLayout.scrollDirection = .vertical
+
+
+          }
+
+
+         }
+     }
+  
 }
 
 
@@ -133,15 +176,14 @@ extension PicturesViewController: UICollectionViewDataSource {
     // confirmame que eres de tipo cell i guardate ahí
     if let pictureCell = (cell as? PictureCell){
       //      print(pictureCell.label.text)
-      //  pictureCell.label.text = String(indexPath.item)
+       pictureCell.label.text = String(indexPath.item)
       //let image1 = UIImage(named:"pic2.jpg")
       // pictureCell.imageView.image = UIImage(named: "pic2")
       // if.row pom imagen pero si
-      pictureCell.imageView.image = ImagesData.imageForPosition(indexPath.row)
+      pictureCell.imageView.image = ImagesData.imageForPosition(indexPath.row) // mi celda tiene  una imgagen imagen que es mi imageView i ahora le paso =  imagedata. imageporposition me develve un entero y me da la imagen que le corresponde al 3.
       // pictureCell.label.text = indexPath.item
       // pictureCell.label.text = indexPath.row
       // print(indexPath.section)
-      
 //      if indexPath.row % 2  == 0 {
 //
 //        pictureCell.imageView.image = UIImage(named: "pic2")
@@ -181,6 +223,9 @@ extension PicturesViewController:UICollectionViewDelegate {
     print (indexPath)
     print(indexPath.item)
     print(indexPath.row)
+    PicturesViewModel.selectedImage = ImagesData.imageForPosition(indexPath.row)
+
+    performSegue(withIdentifier: "segueToDetail", sender: nil)
     //extension de la clase Pictureview que usa protocolo q implementa esta funcionalidad.
     // escribir directamente didSelect
     // super importante porq cuando pinchas tenemos q saber esa info.
@@ -192,69 +237,41 @@ extension PicturesViewController:UICollectionViewDelegate {
 extension PicturesViewController:UICollectionViewDelegateFlowLayout {
   // adapta visualmente la collectionView y hay que implementar metodos, que solo hay que bsuscarlo.
   
-  func collectionView(_: UICollectionView, layout: UICollectionViewLayout, sizeForItemAt: IndexPath) -> CGSize {
+func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let cellWidth = (collectionView.frame.size.width - (numOfHorizontalCells - 1) * marginBetweenCells) / numOfHorizontalCells
+
+        return CGSize(width: cellWidth, height: cellWidth)
+
+    }
     
-    return CGSize.init(width: cellWidth, height: cellHeight)
-    
-  }
-  
-  func collectionView(_: UICollectionView, layout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt: Int) -> CGFloat {
-    
-    return marginBetweenCells
-    
-  }
   
   
-  func collectionView(_: UICollectionView, layout: UICollectionViewLayout, minimumLineSpacingForSectionAt: Int) -> CGFloat {
-    
-    return marginBetweenCells
-    
-    
-  }
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+
+          return marginBetweenCells
+
+      }
+
+      
+
+      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+
+          return marginBetweenCells
+
+      }
   
-  
+
+
+
   func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 1
-    
-    
+
+
   }
+}
   
-  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-    super.viewWillTransition(to: size, with: coordinator)  // le pasamos los mismos parametros del super.
-    // no esta directamente en la uicollectionview
-
-         if UIDevice.current.orientation.isLandscape {
-             print("Landscape")
-          if let scrollLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
-
-            scrollLayout.scrollDirection = .horizontal
-
-
-          }
-
-
-         } else if UIDevice.current.orientation.isPortrait {
-             print("Portrait")
-
-          if let  scrollLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
-            // esto es conversion de tipos
-
-            scrollLayout.scrollDirection = .vertical
-
-
-          }
-
-         } else if UIDevice.current.orientation.isFlat {
-          if let  scrollLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
-
-            scrollLayout.scrollDirection = .vertical
-
-
-          }
-
-
-         }
-     }
+  
   
   
 //  [12:07] Cesc
@@ -323,10 +340,6 @@ extension PicturesViewController:UICollectionViewDelegateFlowLayout {
 //                  layout.scrollDirection = .vertical
 //
 //              }
-
- 
-
-}
 
     
 
