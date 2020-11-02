@@ -196,8 +196,8 @@ extension PicturesViewController: UICollectionViewDataSource {
 //
 //
       
-      
-      
+  
+    
       
       
       //  pictureCell.imageView.image = indexPath.row % 2 == 0 ?  UIImage(named: "pic2"): UIImage(named: "pic1")

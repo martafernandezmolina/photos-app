@@ -12,5 +12,5 @@ class PicturesViewModel {
   
   static var selectedImage: UIImage? 
   
-  
+   
 }

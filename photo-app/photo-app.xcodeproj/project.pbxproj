@@ -79,6 +79,7 @@
 		96AE6B35254ADE18009F60CF /* ImagesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AE6B34254ADE18009F60CF /* ImagesData.swift */; };
 		96AE6B5D254C283D009F60CF /* PictureFullScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AE6B5C254C283D009F60CF /* PictureFullScreenViewController.swift */; };
 		96AE6B60254C306B009F60CF /* PicturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AE6B5F254C306B009F60CF /* PicturesViewModel.swift */; };
+		96AE6BA6254FF967009F60CF /* RandomPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AE6BA5254FF967009F60CF /* RandomPictureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -156,6 +157,7 @@
 		96AE6B34254ADE18009F60CF /* ImagesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesData.swift; sourceTree = "<group>"; };
 		96AE6B5C254C283D009F60CF /* PictureFullScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureFullScreenViewController.swift; sourceTree = "<group>"; };
 		96AE6B5F254C306B009F60CF /* PicturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesViewModel.swift; sourceTree = "<group>"; };
+		96AE6BA5254FF967009F60CF /* RandomPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPictureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				96AE6AB9254ADB1F009F60CF /* resources */,
+				96AE6BA825500157009F60CF /* RandomPicture */,
 				9655EACB254709DC009FDBEC /* Pictures collection */,
 			);
 			path = Features;
@@ -295,6 +298,14 @@
 				96AE6AD2254ADBB2009F60CF /* zZzKLzKP24o.jpg */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		96AE6BA825500157009F60CF /* RandomPicture */ = {
+			isa = PBXGroup;
+			children = (
+				96AE6BA5254FF967009F60CF /* RandomPictureViewController.swift */,
+			);
+			path = RandomPicture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,6 +442,7 @@
 				9655EABA2546CFEA009FDBEC /* ViewController.swift in Sources */,
 				9655EACD25470A13009FDBEC /* PicturesViewController.swift in Sources */,
 				9655EAD725481BB8009FDBEC /* PictureCell.swift in Sources */,
+				96AE6BA6254FF967009F60CF /* RandomPictureViewController.swift in Sources */,
 				9655EAB62546CFEA009FDBEC /* AppDelegate.swift in Sources */,
 				9655EAB82546CFEA009FDBEC /* SceneDelegate.swift in Sources */,
 				96AE6B60254C306B009F60CF /* PicturesViewModel.swift in Sources */,
