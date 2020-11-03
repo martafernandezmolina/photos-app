@@ -50,9 +50,10 @@ class CameraRoll:UIViewController, UIImagePickerControllerDelegate, UINavigation
     
   }
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-    let image:UIImage = info[.editedImage] as? UIImage
+    let image:UIImage? = info[.editedImage] as? UIImage
     imageView.image = image
+    dismiss(animated: true, completion: nil)
     print("sdsadsadads")
   }
 }
- 
+  
