@@ -6,14 +6,14 @@
 //
 
 
-import Foundation
 import UIKit
-import AVFoundation
-import Photos
+
+
 // hacer eso que sube y baja
 //pantalla + boton, ver que funcione imagen de prueba
 
 class CameraRoll:UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+ 
   var imagePicker: UIImagePickerController = UIImagePickerController()
   
   @IBOutlet weak var imageView: UIImageView!
@@ -28,7 +28,7 @@ class CameraRoll:UIViewController, UIImagePickerControllerDelegate, UINavigation
   
   override func viewDidLoad() {
     super.viewDidLoad()
- 
+    
     imageView.image = UIImage(named: "pic1")
   
   }
@@ -39,11 +39,20 @@ class CameraRoll:UIViewController, UIImagePickerControllerDelegate, UINavigation
     if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) {
                 imagePicker.delegate = self
                 imagePicker.sourceType = .savedPhotosAlbum
-                imagePicker.allowsEditing = true
-                present(imagePicker, animated: true, completion: nil)
+                imagePicker.allowsEditing = false
+                present(imagePicker, animated: true, completion: nil) // muestrate
 
             }
      }
   
+  func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+     print ("holaaaaaaaaaa canacel")
+    
+  }
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    let image:UIImage = info[.editedImage] as? UIImage
+    imageView.image = image
+    print("sdsadsadads")
+  }
 }
  
