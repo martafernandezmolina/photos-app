@@ -12,13 +12,37 @@ class PictureFullScreenViewController: UIViewController, UIImagePickerController
   var imagePickerClose: UIImagePickerController = UIImagePickerController()
   @IBOutlet weak var pictureFullScreen: UIImageView!
    
-  @IBOutlet weak var switchOutlet: UISwitch!
+  @IBOutlet weak var labelSwitchAndImage: UILabel!
   
-  @IBAction func switchLike(_ sender: Any) {
-    print (switchOutlet.isOn)
+  
+  @IBOutlet weak var outletTextField: UITextField!
+  
+  @IBAction func actionTextfield(_ sender: Any) {
+  
+    print(outletTextField.text ?? "escribe tu texto")
+    
     
   }
+  @IBOutlet weak var switchOutlet: UISwitch!
  
+  
+  @IBAction func switchLike(_ sender: Any) {
+    
+    switchOutlet.isOn = ImagesData.likeForPosition(<#T##position: Int##Int#>)
+    //print (switchOutlet.isOn)
+    
+    if switchOutlet.isOn {
+      
+      ImagesData.likeForPosition(PicturesViewModel.selectedIndex ?? 0)
+      
+    } else {
+      ImagesData.dislikeImageAtPosition(PicturesViewModel.selectedIndex ?? 0)
+
+    }
+    
+    
+  }
+  
   
   
   
@@ -34,8 +58,26 @@ class PictureFullScreenViewController: UIViewController, UIImagePickerController
       
   
     }
+  
+
+  override func viewDidAppear(_ animated: Bool) {
+   print ("estoy en didappear")
+
+    outletTextField.text = ImagesData.getTitle(PicturesViewModel.selectedIndex!)
+
+    print(PicturesViewModel.selectedIndex ?? "default")
+    labelSwitchAndImage.text =  outletTextField.text
+
+  //  ImagesData.likeForPosition(<#T##position: Int##Int#>)
+   
     
- 
+  }
+    
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    ImagesData.setTitle(outletTextField.text!, position: PicturesViewModel.selectedIndex!)
+  }
+
   
    
 }

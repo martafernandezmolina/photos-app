@@ -180,7 +180,13 @@ extension PicturesViewController: UICollectionViewDataSource {
       //let image1 = UIImage(named:"pic2.jpg")
       // pictureCell.imageView.image = UIImage(named: "pic2")
       // if.row pom imagen pero si
-      pictureCell.imageView.image = ImagesData.imageForPosition(indexPath.row) // mi celda tiene  una imgagen imagen que es mi imageView i ahora le paso =  imagedata. imageporposition me develve un entero y me da la imagen que le corresponde al 3.
+      pictureCell.imageView.image = ImagesData.imageForPosition(indexPath.row)
+       
+      
+      
+      
+      
+      // mi celda tiene  una imgagen imagen que es mi imageView i ahora le paso =  imagedata. imageporposition me develve un entero y me da la imagen que le corresponde al 3.
       // pictureCell.label.text = indexPath.item
       // pictureCell.label.text = indexPath.row
       // print(indexPath.section)
@@ -224,6 +230,7 @@ extension PicturesViewController:UICollectionViewDelegate {
     print(indexPath.item)
     print(indexPath.row)
     PicturesViewModel.selectedImage = ImagesData.imageForPosition(indexPath.row)
+    PicturesViewModel.selectedIndex = indexPath.row
 
     performSegue(withIdentifier: "segueToDetail", sender: nil)
     //extension de la clase Pictureview que usa protocolo q implementa esta funcionalidad.

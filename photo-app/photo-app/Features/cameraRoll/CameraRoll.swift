@@ -55,5 +55,7 @@ class CameraRoll:UIViewController, UIImagePickerControllerDelegate, UINavigation
     dismiss(animated: true, completion: nil)
     print("sdsadsadads")
   }
+  
+ 
 }
   
