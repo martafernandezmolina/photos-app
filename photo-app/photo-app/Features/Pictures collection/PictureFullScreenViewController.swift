@@ -9,6 +9,11 @@ import UIKit
 
 class PictureFullScreenViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
   
+  @IBOutlet weak var meGustaOutlet: UILabel!
+  
+  
+  
+  
   var imagePickerClose: UIImagePickerController = UIImagePickerController()
   @IBOutlet weak var pictureFullScreen: UIImageView!
    
@@ -27,8 +32,6 @@ class PictureFullScreenViewController: UIViewController, UIImagePickerController
  
   
   @IBAction func switchLike(_ sender: Any) {
-    
-    
     
     if switchOutlet.isOn {
       
@@ -52,6 +55,8 @@ class PictureFullScreenViewController: UIViewController, UIImagePickerController
     override func viewDidLoad() {
         super.viewDidLoad()
 
+      
+      meGustaOutlet.text = "I Like! ♥️"
       
       pictureFullScreen.image = PicturesViewModel.selectedImage
       
