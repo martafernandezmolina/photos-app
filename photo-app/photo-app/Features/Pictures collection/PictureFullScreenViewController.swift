@@ -28,8 +28,7 @@ class PictureFullScreenViewController: UIViewController, UIImagePickerController
   
   @IBAction func switchLike(_ sender: Any) {
     
-    switchOutlet.isOn = ImagesData.likeForPosition(<#T##position: Int##Int#>)
-    //print (switchOutlet.isOn)
+    
     
     if switchOutlet.isOn {
       
@@ -68,7 +67,7 @@ class PictureFullScreenViewController: UIViewController, UIImagePickerController
     print(PicturesViewModel.selectedIndex ?? "default")
     labelSwitchAndImage.text =  outletTextField.text
 
-  //  ImagesData.likeForPosition(<#T##position: Int##Int#>)
+  
    
     
   }
