@@ -33,9 +33,11 @@ class PictureFullScreenViewController: UIViewController, UIImagePickerController
     if switchOutlet.isOn {
       
       ImagesData.likeForPosition(PicturesViewModel.selectedIndex ?? 0)
+      print ("is on")
       
     } else {
       ImagesData.dislikeImageAtPosition(PicturesViewModel.selectedIndex ?? 0)
+      print ("is offf")
 
     }
     
