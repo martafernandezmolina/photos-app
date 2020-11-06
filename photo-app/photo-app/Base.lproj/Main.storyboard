@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vzj-vC-qSA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -271,8 +271,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AZP-aX-lE4">
-                                <rect key="frame" x="0.0" y="61" width="414" height="818"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pLy-sa-9F9">
+                                <rect key="frame" x="87" y="357" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AZP-aX-lE4">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="879"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Me gusta" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYL-i8-y5Q">
                                 <rect key="frame" x="218" y="732" width="176" height="90"/>
@@ -293,17 +298,18 @@
                                     <action selector="switchLike:" destination="Jfz-Ci-GQz" eventType="valueChanged" id="D9e-Gn-YLh"/>
                                 </connections>
                             </switch>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6A-4m-9f9">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6A-4m-9f9">
                                 <rect key="frame" x="352" y="68" width="62" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="Gds-oZ-rab"/>
+                                </constraints>
                                 <state key="normal" image="multiply.square.fill" catalog="system"/>
                                 <connections>
                                     <action selector="closeButton:" destination="Jfz-Ci-GQz" eventType="touchUpInside" id="rya-i4-Qv9"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XuL-ku-eXf">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XuL-ku-eXf">
                                 <rect key="frame" x="48" y="83" width="322" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -323,13 +329,21 @@
                         <constraints>
                             <constraint firstItem="UcM-RB-jAy" firstAttribute="trailing" secondItem="AZP-aX-lE4" secondAttribute="trailing" id="Kb6-Jf-ZgM"/>
                             <constraint firstItem="AZP-aX-lE4" firstAttribute="top" secondItem="UcM-RB-jAy" secondAttribute="top" id="Laf-vD-4Ji"/>
+                            <constraint firstItem="I6A-4m-9f9" firstAttribute="bottom" secondItem="XuL-ku-eXf" secondAttribute="bottom" id="RLr-sd-Dz7"/>
+                            <constraint firstItem="XuL-ku-eXf" firstAttribute="leading" secondItem="UcM-RB-jAy" secondAttribute="leading" constant="48" id="TeZ-C3-Zjt"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="AZP-aX-lE4" secondAttribute="bottom" constant="-71" id="Tyv-b0-tjp"/>
                             <constraint firstItem="UcM-RB-jAy" firstAttribute="trailing" secondItem="kYL-i8-y5Q" secondAttribute="trailing" constant="20" id="acV-Ki-mZb"/>
+                            <constraint firstItem="UcM-RB-jAy" firstAttribute="trailing" secondItem="XuL-ku-eXf" secondAttribute="trailing" constant="44" id="cM9-Q5-7MG"/>
                             <constraint firstAttribute="bottom" secondItem="kYL-i8-y5Q" secondAttribute="bottom" constant="20" symbolic="YES" id="eVn-2X-B7G"/>
+                            <constraint firstItem="I6A-4m-9f9" firstAttribute="top" secondItem="UcM-RB-jAy" secondAttribute="top" constant="68" id="jLU-PB-RM9"/>
+                            <constraint firstItem="I6A-4m-9f9" firstAttribute="leading" secondItem="UcM-RB-jAy" secondAttribute="leading" constant="352" id="jV5-Gt-Tc4"/>
                             <constraint firstItem="AZP-aX-lE4" firstAttribute="leading" secondItem="UcM-RB-jAy" secondAttribute="leading" id="t9s-cV-lLn"/>
+                            <constraint firstItem="AZP-aX-lE4" firstAttribute="trailing" secondItem="I6A-4m-9f9" secondAttribute="trailing" id="uVR-BD-Soc"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="labelSwitchAndImage" destination="e8c-un-eNl" id="7Ee-89-bKE"/>
+                        <outlet property="meGustaOutlet" destination="kYL-i8-y5Q" id="dgv-0K-cm4"/>
                         <outlet property="outletTextField" destination="XuL-ku-eXf" id="crk-Bt-xvN"/>
                         <outlet property="pictureFullScreen" destination="AZP-aX-lE4" id="dTo-mc-x7s"/>
                         <outlet property="switchOutlet" destination="RCV-bR-Y2l" id="A1S-AN-D8G"/>
