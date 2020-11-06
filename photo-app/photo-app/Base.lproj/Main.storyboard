@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vzj-vC-qSA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -96,7 +96,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mDJ-Vi-qzT">
                                 <rect key="frame" x="20" y="577" width="374" height="216"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="hjkljkljkajdsakljdsakldsad" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MEG-vr-u36">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Texto guardado" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MEG-vr-u36">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="170"/>
                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                         <constraints>
@@ -116,6 +116,9 @@
                                         <state key="normal" title="Reset">
                                             <color key="titleColor" red="0.50696456430000003" green="1" blue="0.44967478509999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="resetButton:" destination="aQP-RK-JtV" eventType="touchUpInside" id="vtg-w5-UR3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
