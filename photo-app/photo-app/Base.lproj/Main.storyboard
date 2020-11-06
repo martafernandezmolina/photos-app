@@ -139,7 +139,7 @@
                     <connections>
                         <outlet property="emailOutlet" destination="gZn-u5-d7K" id="eTW-IO-8oj"/>
                         <outlet property="nameOutlet" destination="zvb-16-8pb" id="3wW-Kz-lua"/>
-                        <outlet property="testViewOutlet" destination="MEG-vr-u36" id="CM8-kj-YSc"/>
+                        <outlet property="textViewOutlet" destination="MEG-vr-u36" id="CM8-kj-YSc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gd9-Sa-IOp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

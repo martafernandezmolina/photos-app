@@ -14,25 +14,26 @@ class EmailViewController: UIViewController {
   @IBOutlet weak var textViewOutlet: UITextView!
   @IBOutlet weak var emailOutlet: UITextField!
   
-  @IBOutlet weak var testViewOutlet: UITextView!
+ 
   @IBAction func saveButton(_ sender: Any) {
     guard let name  = nameOutlet.text, let email = emailOutlet.text else { return }
     let fullString:String = "\(name)\(email)"
-   
     
     let defaults = UserDefaults.standard
     defaults.set(fullString, forKey: key)
-    
+    // guarda
   
     func viewDidLoad() {
         super.viewDidLoad()
       
-      let getInformation = UserDefaults.standard
+      var getInformation = UserDefaults.standard
       defaults.string(forKey: key)
-      print(getInformation)
       
-      textViewOutlet.t
- 
+      textViewOutlet.text.append("\(getInformation)")
+      
+      
+      
+      
     }
     
   
